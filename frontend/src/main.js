@@ -9,7 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTruck, faTrain, faBus, faMotorcycle, faCar, faAngleDown, faAngleUp,
 faClipboard, faSortAlphaDown, faSortAlphaUp, faMoneyBillAlt, faPiggyBank,
 faSortAmountDown, faSortAmountUp, faUserTie, faSignInAlt, faDoorOpen,
-faPlusSquare, faPlusCircle, faPlus, faWalking, faCartPlus, faShip, faBicycle,
+faPlusSquare, faPlusCircle, faPlus, faUserPlus, faWalking, faCartPlus, faShip, faBicycle,
 faHelicopter
  } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,7 +19,7 @@ import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText }
 library.add( faTruck, faTrain, faBus, faMotorcycle, faCar, faAngleDown, faAngleUp,
 faClipboard, faSortAlphaDown, faSortAlphaUp, faMoneyBillAlt, faPiggyBank,
 faSortAmountDown, faSortAmountUp, faUserTie, faSignInAlt, faDoorOpen,
-faPlusSquare, faPlusCircle, faPlus, faWalking, faCartPlus, faShip, faBicycle,
+faPlusSquare, faPlusCircle, faPlus, faUserPlus, faWalking, faCartPlus, faShip, faBicycle,
 faHelicopter);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

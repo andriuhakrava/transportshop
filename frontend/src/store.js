@@ -2,19 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import { router } from './router';
-// import auth from './modules/auth';
-// import categories from './modules/categories';
-// import products from './modules/products';
 
 Vue.use(Vuex);
-
-// export default new Vuex.Store({
-//   modules: {
-//     auth,
-//     categories,
-//     products
-//   }
-// });
 
 export default new Vuex.Store({
   state: {
@@ -82,6 +71,16 @@ export default new Vuex.Store({
       axios.post('/login', user)
             .then(response => {
               // console.log(response.data);
+              localStorage.setItem('jwtoken', response.data[0].token);
+              commit('setUser', response.data[0]);
+              router.push('/admin');
+            })
+            .catch(error => console.log(error));
+    },
+    registerAdmin({ commit }, { user }){
+      axios.post('/register ', user)
+            .then(response => {
+              console.log(response.data);
               localStorage.setItem('jwtoken', response.data[0].token);
               commit('setUser', response.data[0]);
               router.push('/admin');

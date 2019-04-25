@@ -2,7 +2,7 @@
 	<div>
 		<h2 class="text-center">
 			<font-awesome-icon icon="walking" size="lg" />
-			Let's move to your personal cabinet!
+			Register here to create a personal cabinet!
 		</h2>
 		<form @submit.prevent="onSignIn" class="admin-form">
 			<div class="form-group">
@@ -30,7 +30,7 @@
           Now it is {{ password.length }}.
         </div>
       </div>
-			<!-- <div class="form-group">
+			<div class="form-group">
         <label for="confirm-password">Confirm password: </label>
         <input type="password" id="confirm-password" class="form-control" required
         						v-model="confirm" :class="{ 'is-invalid': $v.confirm.$error }" @blur="$v.confirm.$touch()" />
@@ -40,7 +40,7 @@
         <div class="invalid-feedback" v-if="!$v.confirm.sameAs">
           Password should match!
         </div>
-      </div> -->
+      </div>
 			<button class="btn btn-success" type="submit" :disabled="$v.$invalid">
 				Sign In
 			</button>
@@ -49,24 +49,24 @@
 </template>
 
 <script>
-	import { required, email, minLength } from 'vuelidate/lib/validators';
+	import { required, email, minLength, sameAs } from 'vuelidate/lib/validators';
 
 	export default {
 		data(){
 			return {
 				email: '',
 				password: '',
-				// confirm: ''
+				confirm: ''
 			}
 		},
 		methods: {
 			onSignIn(){
 				console.log('GOOD!');
-				this.$store.dispatch('signIn', { 
+				this.$store.dispatch('registerAdmin', { 
 					user: {
 						email: this.email, 
 						password: this.password, 
-						// confirm: this.confirm
+						confirm: this.confirm
 					}
 				});
 			},
@@ -80,12 +80,12 @@
         required,
         minLength: minLength(6)
       },
-      // confirm: {
-      //   required,
-      //   sameAs: sameAs((vue) => {
-      //     return vue.password
-      //   })
-      // }
+      confirm: {
+        required,
+        sameAs: sameAs((vue) => {
+          return vue.password
+        })
+      }
 		}
 	}
 </script>

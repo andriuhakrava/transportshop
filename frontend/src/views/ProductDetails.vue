@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div v-if="loading" class="img-loader">
-			<img 	src="../../public/images/H8rC.gif" 
+			<img 	src="../../public/images/loader.gif" 
 						height="350" 
 						width="350" 
 						alt="loading" />

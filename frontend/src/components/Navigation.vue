@@ -8,6 +8,9 @@
 				<router-link tag="li" to="/admin" class="right-menu" active-class="nav-menu-activelink">
 					<font-awesome-icon icon="user-tie" class="sign-icon" />Admin
 				</router-link>
+				<router-link tag="li" to="/register" active-class="nav-menu-activelink">
+					<font-awesome-icon icon="user-plus" class="sign-icon" />Register
+				</router-link>
 				<router-link tag="li" to="/login" active-class="nav-menu-activelink">
 					<font-awesome-icon icon="sign-in-alt" class="sign-icon" />Sign In
 				</router-link>
