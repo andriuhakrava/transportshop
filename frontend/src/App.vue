@@ -51,6 +51,15 @@ import Navigation from './components/Navigation.vue';
     margin: 0 auto;
     max-width: 600px;
   }
+  .page-wrapper {
+    padding: 0 55px;
+  }
+  .page-header {
+    margin-bottom: 44px;
+  }
+  .user-header {
+    margin-bottom: 33px;
+  }
   .fade-enter-active {
     animation: fade-in 300ms ease-out forwards;
   }
@@ -71,6 +80,19 @@ import Navigation from './components/Navigation.vue';
     }
     to {
       opacity: 0;
+    }
+  }
+  @media screen and (max-width: 550px){
+    .page-wrapper {
+      padding: 0 40px;
+    }
+    .user-header {
+      font-size: 28px;
+    }
+  }
+  @media screen and (max-width: 450px){
+    .user-header {
+      font-size: 23px;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<h2 class="text-center">
+	<div class="page-wrapper">
+		<h2 class="text-center user-header">
 			<font-awesome-icon icon="walking" size="lg" />
 			Register here to create a personal cabinet!
 		</h2>

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul class="sortcategory-list" v-if="!loading">
-			<h3 class="sidebar-menu-body-header">2. Filter car by your wish</h3>
+			<h3 class="sidebar-menu-body-header">2. Filter it by your wish</h3>
 			<li class="filter-category">
 				<button @click="getAllProducts">
 					<font-awesome-icon icon="clipboard" size="2x" id="all-icon" />

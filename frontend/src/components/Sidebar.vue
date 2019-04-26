@@ -4,12 +4,12 @@
 			<span @click="toggleSidebar">
 				<font-awesome-icon v-if="isClosed" icon="angle-down" size="lg" />
 				<font-awesome-icon v-else icon="angle-up" size="lg" />
-				Choose your best car right here
+				Choose your best transport right here
 			</span>
 		</h2>
 		<div class="sidebar-menu-body">
 			<div class="sidebar-menu-body-step">
-				<h3 class="sidebar-menu-body-header">1. Try Find car</h3>
+				<h3 class="sidebar-menu-body-header">1. Try Find transport</h3>
 				<input type="text" v-model="searchQuery" class="searchcar-input" />
 			</div>
 			<div class="sidebar-menu-body-step">
@@ -101,6 +101,7 @@ import { mapActions } from 'vuex';
 	}
 	.sidebar-menu-header {
 		text-align: center;
+		padding: 0 22px;
 	}
 	.sidebar-menu-header > span {
 		cursor: pointer;
@@ -110,7 +111,7 @@ import { mapActions } from 'vuex';
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0;	
-		max-height: 36em;
+		max-height: 35em;
 		overflow: hidden;	
 		transition: .6s ease all;
 	}
@@ -153,6 +154,19 @@ import { mapActions } from 'vuex';
 		}
 		.sidebar-menu-body-step{
 			display: flex;
+		}
+	}
+	@media screen and (max-width: 600px){
+		.sidebar-menu-header {
+			font-size: 29px;
+		}
+	}
+	@media screen and (max-width: 470px){
+		.sidebar-menu-header {
+			font-size: 23px;
+		}
+		.sidebar-menu-body-header {
+			font-size: 20px;
 		}
 	}
 </style>

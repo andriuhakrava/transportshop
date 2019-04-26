@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<h2 class="text-center">Add New Category</h2>
-		<p class="add-description">You could add one from two categories that are still to be added (bicycle or helicopter)</p>
+		<h2 class="text-center user-header">Add New Category</h2>
+		<p class="add-description">You could add one from two categories that are still to be added (<b>only bicycle or helicopter</b>)</p>
 		<form @submit.prevent="onAddCategory" class="admin-form">
 			<div class="form-group">
         <label for="category-name">Category name: </label>
@@ -78,13 +78,15 @@ import { required, alpha } from 'vuelidate/lib/validators';
 </script>
 
 <style scoped>
-	h2 {
-		margin-bottom: 33px;
-	}
 	.add-description {
 		font-size: 19px;
 		font-style: italic;
 		text-align: center;
 		margin-bottom: 26px;
+	}
+	@media screen and (max-width: 450px){
+		.page-wrapper {
+			padding: 0 15px;
+		}
 	}
 </style>

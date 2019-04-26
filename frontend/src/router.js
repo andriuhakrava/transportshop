@@ -5,7 +5,7 @@ import About from './views/About.vue';
 import Contacts from './views/Contacts.vue';
 import ProductDetails from './views/ProductDetails.vue';
 import Admin from './views/Admin.vue';
-import Login from './views/Login.vue';
+import SignIn from './views/SignIn.vue';
 import Register from './views/Register.vue';
 import AddProduct from './components/AddProduct.vue';
 import AddCategory from './components/AddCategory.vue';
@@ -45,7 +45,7 @@ export const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: SignIn
     },
     {
       path: '/register',

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 class="text-center">Add New Product</h2>
+		<h2 class="text-center user-header">Add New Product</h2>
 		<form @submit.prevent="onAddProduct" class="admin-form">
 			<div class="form-group">
         <label for="name">Product name: </label>
@@ -180,10 +180,9 @@ import { required, numeric } from 'vuelidate/lib/validators';
 </script>
 
 <style scoped>
-	h2 {
-		margin-bottom: 33px;
-	}
-	/*button, button:hover {
-		color: #fff;
-	}*/
+  @media screen and (max-width: 450px){
+    .page-wrapper {
+      padding: 0 15px;
+    }
+  }
 </style>

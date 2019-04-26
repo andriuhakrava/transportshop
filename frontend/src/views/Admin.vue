@@ -1,6 +1,6 @@
 <template>
-	<div class="admin-wrapper">
-		<h2 class="text-center">Hello, admin! Welcome to your personal cabinet!</h2>
+	<div class="page-wrapper">
+		<h2 class="text-center user-header">Hello, admin! Welcome to your personal cabinet!</h2>
 		<div class="admin-card">
 			<div class="admin-avatar">
 				<font-awesome-icon icon="user-tie" size="6x" />
@@ -35,9 +35,9 @@
 </script>
 
 <style scoped>
-	h2 {
+	/*h2 {
 		margin-bottom: 38px;
-	}
+	}*/
 	.admin-card {
 		display: flex;
 		margin: 0 auto 48px;
@@ -67,7 +67,12 @@
 		background: #fff;
 		outline: none;
 	}
-	.slide-enter-active {
+	@media screen and (max-width: 450px){
+		.page-wrapper {
+			padding: 0 15px;
+		}
+	}
+	/*.slide-enter-active {
     animation: fade-in 300ms ease-out forwards;
   }
   .slide-leave-active {
@@ -88,5 +93,5 @@
     to {
       opacity: 0;
     }
-  }
+  }*/
 </style>
