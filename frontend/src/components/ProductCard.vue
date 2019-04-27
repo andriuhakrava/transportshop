@@ -22,7 +22,7 @@
           <span class="product-card-info-badge">Model: </span>
           {{ singleproduct.model }}
         </p>
-        <p>
+        <p v-if="singleproduct.specifications.engine">
           <span class="product-card-info-badge">Engine: </span>
           {{ singleproduct.specifications.engine }}
         </p>

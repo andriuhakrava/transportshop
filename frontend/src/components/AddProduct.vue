@@ -77,7 +77,6 @@
         <input  type="text"
                 id="engine"
                 class="form-control"
-                required
                 v-model.trim="newProduct.specifications.engine" />
       </div>
       <div class="form-group">
@@ -185,6 +184,7 @@ export default {
           currency: this.newProduct.currency,
         },
       });
+      this.clearAddForm();
     },
     clearAddForm() {
       this.newProduct.name = '';

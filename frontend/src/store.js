@@ -103,6 +103,7 @@ export default new Vuex.Store({
       axios.post('/product', product, { headers: { Authorization: `Token ${token}` } })
         .then((response) => {
           commit('addProduct', response.data);
+          router.push('/');
         })
         .catch(() => {
           localStorage.removeItem('jwtoken');
