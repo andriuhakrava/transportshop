@@ -14,13 +14,13 @@ import store from './store';
 
 Vue.use(Router);
 
-export const router = new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
       path: '*',
       name: '404',
-      component: PageNotFound
+      component: PageNotFound,
     },
     {
       path: '/',
@@ -40,75 +40,45 @@ export const router = new Router({
     {
       path: '/product/:id',
       name: 'product',
-      component: ProductDetails
+      component: ProductDetails,
     },
     {
       path: '/login',
       name: 'login',
-      component: SignIn
+      component: SignIn,
     },
     {
       path: '/register',
       name: 'register',
-      component: Register
+      component: Register,
     },
     {
       path: '/admin',
       name: 'admin',
       component: Admin,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
       },
       children: [
         {
           path: 'addcategory',
           name: 'addcategory',
-          component: AddCategory
+          component: AddCategory,
         },
         {
           path: 'addproduct',
           name: 'addproduct',
-          component: AddProduct
-        }
-      ]
+          component: AddProduct,
+        },
+      ],
     },
-    // {
-    //   path: '/addproduct',
-    //   name: 'addproduct',
-    //   component: AddProduct,
-    //   meta: {
-    //     requiresAuth: true
-    //   }
-    // },
-    // {
-    //   path: '/addcategory',
-    //   name: 'addcategory',
-    //   component: AddCategory,
-    //   meta: {
-    //     requiresAuth: true
-    //   }
-    // }
-  ]
+  ],
 });
 
-// router.beforeEach((to, from, next) => {
-//   if(to.matched.some(record => record.meta.requiresAuth)){
-//     if (localStorage.getItem('jwtoken')){
-//       // store.dispatch('checkUser', localStorage.getItem('jwtoken'))
-//       next();
-//     } else {
-//       next('/login');
-//     }
-//   } else {
-//     next();
-//   }
-// });
-
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)){
-    if (localStorage.getItem('jwtoken')){
-      console.log(localStorage.getItem('jwtoken'));
-      store.dispatch('checkUser', localStorage.getItem('jwtoken'))
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem('jwtoken')) {
+      store.dispatch('checkUser', localStorage.getItem('jwtoken'));
       next();
     } else {
       next('/login');
@@ -117,3 +87,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
+export default router;
