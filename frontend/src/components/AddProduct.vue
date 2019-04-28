@@ -171,19 +171,19 @@ export default {
   methods: {
     onAddProduct() {
       this.newProduct.images.push(this.newProduct.selectedImage);
-      this.$store.dispatch('addProduct', {
-        product: {
-          name: this.newProduct.name,
-          descriptions: this.newProduct.descriptions,
-          images: this.newProduct.images,
-          category: this.newProduct.category,
-          brand: this.newProduct.brand,
-          model: this.newProduct.model,
-          specifications: this.newProduct.specifications,
-          price: parseInt(this.newProduct.price, 10),
-          currency: this.newProduct.currency,
-        },
-      });
+      const product = {
+        name: this.newProduct.name,
+        descriptions: this.newProduct.descriptions,
+        images: this.newProduct.images,
+        category: this.newProduct.category,
+        brand: this.newProduct.brand,
+        model: this.newProduct.model,
+        specifications: this.newProduct.specifications,
+        price: parseInt(this.newProduct.price, 10),
+        currency: this.newProduct.currency,
+      };
+      console.log(product);
+      this.$store.dispatch('addProduct', { product });
       this.clearAddForm();
     },
     clearAddForm() {
@@ -193,7 +193,6 @@ export default {
       this.newProduct.category = '';
       this.newProduct.brand = '';
       this.newProduct.model = '';
-      this.newProduct.specifications.engine = '';
       this.newProduct.price = '';
       this.newProduct.currency = '';
     },

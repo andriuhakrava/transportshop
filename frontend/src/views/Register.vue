@@ -55,7 +55,7 @@
         </div>
       </div>
       <button class="btn btn-success" type="submit" :disabled="$v.$invalid">
-        Sign In
+        Register
       </button>
     </form>
   </div>

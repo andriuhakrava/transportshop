@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card">
+  <div class="product-card" v-if="!loading">
     <router-link tag="div" :to="`/product/${singleproduct.id}`">
       <div class="product-card-icon">
         <font-awesome-icon v-if="singleproduct.category.toLowerCase() === 'cars'"
@@ -27,7 +27,7 @@
           {{ singleproduct.specifications.engine }}
         </p>
       </div>
-      <div class="product-card-info">
+      <div class="product-card-info text-right">
         <p>
           <span class="product-card-info-badge">Price: </span>
           {{ singleproduct.price }} {{ singleproduct.currency | currency }}
@@ -49,6 +49,11 @@ export default {
   filters: {
     currency(value) {
       return (value === 'usd') ? '$' : '';
+    },
+  },
+  computed: {
+    loading() {
+      return this.$store.state.loading;
     },
   },
 };
@@ -76,7 +81,7 @@ export default {
   }
   .product-card-header {
     text-align: center;
-    margin-bottom: 15px;
+    padding: 15px 0;
   }
   .product-card-info {
     display: inline-block;

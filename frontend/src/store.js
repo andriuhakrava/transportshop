@@ -37,9 +37,6 @@ export default new Vuex.Store({
     addCategory(state, payload) {
       state.categories.push(payload);
     },
-    addProduct(state, payload) {
-      state.products.push(payload);
-    },
   },
   actions: {
     getCategories({ commit }) {
@@ -62,8 +59,8 @@ export default new Vuex.Store({
       commit('setLoading', true);
       axios.get(`/product/${id}`)
         .then((response) => {
-          commit('setLoading', false);
           commit('setSingleProduct', response.data);
+          commit('setLoading', false);
         });
     },
     registerAdmin({ commit }, { user }) {
@@ -88,10 +85,12 @@ export default new Vuex.Store({
       router.push('/');
     },
     addCategory({ commit }, { categori }) {
+      commit('setLoading', true);
       const token = localStorage.getItem('jwtoken');
       axios.post('/categori', categori, { headers: { Authorization: `Token ${token}` } })
         .then((response) => {
           commit('addCategory', response.data);
+          commit('setLoading', false);
         })
         .catch(() => {
           localStorage.removeItem('jwtoken');
@@ -99,10 +98,11 @@ export default new Vuex.Store({
         });
     },
     addProduct({ commit }, { product }) {
+      commit('setLoading', true);
       const token = localStorage.getItem('jwtoken');
       axios.post('/product', product, { headers: { Authorization: `Token ${token}` } })
-        .then((response) => {
-          commit('addProduct', response.data);
+        .then(() => {
+          commit('setLoading', false);
           router.push('/');
         })
         .catch(() => {

@@ -1,6 +1,6 @@
 <template>
   <div class="products" v-if="products">
-    <product  v-for="product in products" :key="product.id" :singleproduct="product" />
+    <product v-for="product in products" :key="product.id" :singleproduct="product" />
   </div>
 </template>
 

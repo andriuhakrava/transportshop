@@ -61,6 +61,9 @@ export default {
   .user-header {
     margin-bottom: 33px;
   }
+  .img-loader {
+    text-align: center;
+  }
   .fade-enter-active {
     animation: fade-in 300ms ease-out forwards;
   }

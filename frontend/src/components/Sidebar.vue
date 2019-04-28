@@ -107,9 +107,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    max-height: 32em;
+    max-height: 37em;
     overflow: hidden;
-    transition: .6s ease all;
+    transition: max-height .6s ease;
   }
   .sidebar-menu-body-step {
     display: flex;

@@ -21,7 +21,7 @@
         <span class="product-card-info-badge">Description: </span>
         {{ product.descriptions }}
       </p>
-      <p>
+      <p v-if="product.specifications.engine">
         <span class="product-card-info-badge">Engine: </span>
         {{ product.specifications.engine }}
       </p>
@@ -88,9 +88,6 @@ export default {
   .product-img {
     max-width: 600px;
     width: 100%;
-  }
-  .img-loader {
-    text-align: center;
   }
   @media screen and (max-width: 450px){
     .page-wrapper {
