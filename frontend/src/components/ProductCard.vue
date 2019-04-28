@@ -65,7 +65,7 @@ export default {
     padding: 18px;
     box-sizing: border-box;
     margin: 14px;
-    width: 30%;
+    width: 45%;
     border: 2px solid #ddd;
     border-radius: 8px;
     box-shadow: 3px 5px 8px #ddccee;
@@ -98,15 +98,8 @@ export default {
   .product-card-info-date {
     font-size: 12px;
   }
-  @media screen and (max-width: 999px){
-    .product-card {
-      display: inline-block;
-      width: 45%;
-    }
-  }
   @media screen and (max-width: 768px){
     .product-card {
-      display: inline-block;
       width: 85%;
     }
   }
