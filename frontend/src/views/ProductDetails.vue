@@ -9,6 +9,9 @@
       <p v-if="product.images[0]">
         <img :src="product.images[0]" alt="product.name" class="product-img" />
       </p>
+      <p v-else>
+        <img src="../../public/images/template-car.png" class="product-img" />
+      </p>
       <p>
         <span class="product-card-info-badge">Brand: </span>
         {{ product.brand }}

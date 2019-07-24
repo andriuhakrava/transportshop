@@ -11,7 +11,10 @@
       <h3 class="product-card-header">{{ singleproduct.name }}</h3>
       <p v-if="singleproduct.images[0]">
         <img :src="singleproduct.images[0]" class="product-card-img"
-             alt="singleproduct.name" />
+             :alt="singleproduct.name" />
+      </p>
+      <p v-else>
+        <img src="../../public/images/template-car.png" class="product-card-img" alt="template-image" />
       </p>
       <div class="product-card-info">
         <p>
